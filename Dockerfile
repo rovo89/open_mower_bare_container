@@ -20,4 +20,4 @@ RUN --mount=type=bind,from=dependencies,source=/rosdeps,target=/rosdeps \
     apt-get update && \
     rosdep update --rosdistro $ROS_DISTRO && \
     apt-get install --no-install-recommends --yes git $(cat /rosdeps)
-COPY .github/assets/openmower_entrypoint.sh /openmower_entrypoint.sh
+COPY docker/openmower_entrypoint.sh /openmower_entrypoint.sh
