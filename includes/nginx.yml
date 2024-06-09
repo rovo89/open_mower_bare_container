@@ -1,0 +1,9 @@
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.25.5-alpine-slim
+    volumes:
+      - $OM_SRC_DIR/docker/assets/nginx.conf:/etc/nginx/conf.d/default.conf
+      - $OM_SRC_DIR/web:/opt/open_mower_ros/web
+    network_mode: host
+    restart: unless-stopped

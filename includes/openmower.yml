@@ -1,0 +1,20 @@
+services:
+  openmower:
+    container_name: openmower
+    image: $OM_DEV_IMAGE_TAG:latest
+    entrypoint: /openmower_entrypoint.sh
+    command: roslaunch open_mower open_mower.launch --screen
+    environment:
+      - ROSCONSOLE_CONFIG_FILE=/config/rosconsole.config
+      - ROSOUT_DISABLE_FILE_LOGGING=True
+    volumes:
+      - $OM_SRC_DIR:/opt/open_mower_ros
+      - /dev:/dev
+      - /boot/openmower/mower_config.txt:/config/mower_config.sh
+      - /root/ros_home:/root
+      - /root/rosconsole.config:/config/rosconsole.config
+    tmpfs:
+      - /root/.ros/log
+    privileged: true
+    network_mode: host
+    restart: unless-stopped

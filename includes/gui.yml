@@ -1,0 +1,19 @@
+services:
+  gui:
+    container_name: gui
+    depends_on:
+      - openmower
+    image: ghcr.io/cedbossneo/openmower-gui:master
+    environment:
+      - MOWER_CONFIG_FILE=/config/mower_config.sh
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - ROS_MASTER_URI=http://localhost:11311
+      - MQTT_ENABLED=true
+      - MQTT_HOST=:18831
+    volumes:
+      - /dev:/dev
+      - /boot/openmower/db:/app/db
+      - /boot/openmower/mower_config.txt:/config/mower_config.sh
+      - /var/run/docker.sock:/var/run/docker.sock
+    network_mode: host
+    restart: unless-stopped

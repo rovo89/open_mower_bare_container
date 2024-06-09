@@ -1,0 +1,8 @@
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:2.0.18
+    volumes:
+      - $OM_SRC_DIR/docker/assets/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    network_mode: host
+    restart: unless-stopped

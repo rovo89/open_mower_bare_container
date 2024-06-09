@@ -1,0 +1,6 @@
+name: openmower
+include:
+  - includes/openmower.yml
+  - includes/gui.yml
+  - includes/mosquitto.yml
+  - includes/nginx.yml
