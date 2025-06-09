@@ -1,0 +1,25 @@
+{
+  "image": "omdev",
+  "workspaceFolder": "/opt/open_mower_ros",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/opt/open_mower_ros,type=bind",
+  "containerEnv": {
+    "PATH": "/opt/ros/noetic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "LD_LIBRARY_PATH": "/opt/open_mower_ros/devel/lib:/opt/ros/noetic/lib:/opt/ros/noetic/lib/aarch64-linux-gnu",
+    "CMAKE_PREFIX_PATH": "/opt/open_mower_ros/devel:/opt/ros/noetic",
+    "ROS_VERSION": "1",
+    "ROS_PYTHON_VERSION": "3",
+    "ROS_DISTRO": "noetic",
+    "ROS_PACKAGE_PATH": "/opt/open_mower_ros/src:/opt/ros/noetic/share",
+    "PYTHONPATH": "/opt/open_mower_ros/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages",
+    "PKG_CONFIG_PATH": "/opt/open_mower_ros/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig",
+    "ROS_ROOT": "/opt/ros/noetic/share/ros"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools-extension-pack",
+        "ms-iot.vscode-ros"
+      ]
+    }
+  }
+}
